@@ -1,0 +1,87 @@
+lua
+-- Variables
+local player = game.Players.LocalPlayer
+local camera = game.Workspace.CurrentCamera
+local gui = Instance.new("ScreenGui")
+local toggles = {}
+
+-- Functions
+local function teamCheck()
+    -- Implement team check logic here
+    print("Team check enabled")
+end
+
+local function wallBang()
+    -- Implement wall bang logic here
+    print("Wall bang enabled")
+end
+
+local function fly()
+    -- Implement fly logic here
+    print("Fly enabled")
+end
+
+local function noClip()
+    -- Implement no clip logic here
+    print("No clip enabled")
+end
+
+local function superLowTextures()
+    -- Implement super low textures logic here
+    print("Super low textures enabled")
+end
+
+-- GUI Creation
+local toggleFrame = Instance.new("Frame")
+toggleFrame.BackgroundColor3 = Color3.new(0, 0, 0)
+toggleFrame.Size = UDim2.new(0, 200, 0, 300)
+toggleFrame.Position = UDim2.new(0, 10, 0, 10)
+gui.Parent = game.Players.LocalPlayer.PlayerGui
+toggleFrame.Parent = gui
+
+-- Toggle Creation
+local toggle = Instance.new("TextButton")
+toggle.BackgroundColor3 = Color3.new(1, 1, 1)
+toggle.Size = UDim2.new(0, 150, 0, 30)
+toggle.Position = UDim2.new(0, 25, 0, 25)
+toggle.Text = "Team Check"
+toggle.ClickDetector.MouseClick:Connect(teamCheck)
+toggle.Parent = toggleFrame
+table.insert(toggles, toggle)
+
+toggle = Instance.new("TextButton")
+toggle.BackgroundColor3 = Color3.new(1, 1, 1)
+toggle.Size = UDim2.new(0, 150, 0, 30)
+toggle.Position = UDim2.new(0, 25, 0, 60)
+toggle.Text = "Wall Bang"
+toggle.ClickDetector.MouseClick:Connect(wallBang)
+toggle.Parent = toggleFrame
+table.insert(toggles, toggle)
+
+toggle = Instance.new("TextButton")
+toggle.BackgroundColor3 = Color3.new(1, 1, 1)
+toggle.Size = UDim2.new(0, 150, 0, 30)
+toggle.Position = UDim2.new(0, 25, 0, 95)
+toggle.Text = "Fly"
+toggle.ClickDetector.MouseClick:Connect(fly)
+toggle.Parent = toggleFrame
+table.insert(toggles, toggle)
+
+toggle = Instance.new("TextButton")
+toggle.BackgroundColor3 = Color3.new(1, 1, 1)
+toggle.Size = UDim2.new(0, 150, 0, 30)
+lua
+toggle.Position = UDim2.new(0, 25, 0, 130)
+toggle.Text = "No Clip"
+toggle.ClickDetector.MouseClick:Connect(noClip)
+toggle.Parent = toggleFrame
+table.insert(toggles, toggle)
+
+toggle = Instance.new("TextButton")
+toggle.BackgroundColor3 = Color3.new(1, 1, 1)
+toggle.Size = UDim2.new(0, 150, 0, 30)
+toggle.Position = UDim2.new(0, 25, 0, 165)
+toggle.Text = "Super Low Textures"
+toggle.ClickDetector.MouseClick:Connect(superLowTextures)
+toggle.Parent = toggleFrame
+table.insert(toggles, toggle)
